@@ -15,6 +15,8 @@ spec: # Defines the Deployment Behaviour
       containers:
       - name: cart-app
         image: muralisocial123/flower-app:1.0
+        ports:
+          - containerPort: 3015
         resources:
           limits:
             memory: "250Mi"
@@ -22,5 +24,3 @@ spec: # Defines the Deployment Behaviour
           requests:
             memory: "128Mi"
             cpu: "50m"
-          ports:
-          - containerPort: 3015
