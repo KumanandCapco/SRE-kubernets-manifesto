@@ -6,11 +6,11 @@ spec: # Defines the Deployment Behaviour
   replicas: 3
   selector:
     matchLabels:
-      app: web
+      app: kumar
   template:
     metadata:
       labels:
-        app: web
+        app: kumar
     spec: #Define Pod Behaviour
       containers:
       - name: min-app
@@ -24,3 +24,16 @@ spec: # Defines the Deployment Behaviour
           requests:
             memory: "128Mi"
             cpu: "50m"
+---
+# Writing Service.yaml to expose the application
+apiVersion: v1
+kind: Service
+metadata:
+  name: kumananand-app-deployment
+spec:
+  selector:
+    app: kumar
+  ports:
+  - port: 3016 #Service Port
+    targetPort: 3015 # Container Port
+  type: LoadBalancer
