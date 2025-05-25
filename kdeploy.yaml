@@ -29,7 +29,7 @@ spec: # Defines the Deployment Behaviour
 apiVersion: v1
 kind: Service
 metadata:
-  name: kumar-flower-app-svc
+  name: kumar
 spec:
   selector:
     app: kumar
