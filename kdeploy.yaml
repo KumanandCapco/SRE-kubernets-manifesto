@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flower-app-deployment
+  name: kumananand-app-deployment
 spec: # Defines the Deployment Behaviour
   replicas: 3
   selector:
@@ -13,7 +13,7 @@ spec: # Defines the Deployment Behaviour
         app: web
     spec: #Define Pod Behaviour
       containers:
-      - name: cart-app
+      - name: min-app
         image: muralisocial123/flower-app:1.0
         ports:
           - containerPort: 3015
